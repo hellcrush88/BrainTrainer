@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void timer(){
-        cdTimer = new CountDownTimer(9100, 1000) {
+        cdTimer = new CountDownTimer(30100, 1000) {
             @Override
             public void onTick(long msUntilFinished) {
                 if(msUntilFinished/1000 <= 9){
