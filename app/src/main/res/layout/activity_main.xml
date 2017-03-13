@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sky.braintrainer.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <Button
+            android:id="@+id/start_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="false"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_rounded_button"
+            android:fontFamily="casual"
+            android:onClick="start"
+            android:padding="16dp"
+            android:text="GO!"
+            android:textAlignment="center"
+            android:textSize="80sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+            <TextView
+                android:id="@+id/timerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/holo_red_light"
+                android:fontFamily="casual"
+                android:padding="8dp"
+                android:text="30s"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/scoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/holo_orange_light"
+                android:fontFamily="casual"
+                android:padding="8dp"
+                android:text="0/0"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/sumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="31 + 12"
+                android:textAlignment="center"
+                android:textSize="32sp"
+                android:layout_alignBaseline="@+id/timerText"
+                android:layout_alignBottom="@+id/timerText"
+                android:layout_centerHorizontal="true" />
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sumText"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="24dp"
+                android:columnCount="1"
+                android:rowCount="2">
+
+                <LinearLayout
+                    android:id="@+id/upper_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/gridBtn1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_button_purple"
+                        android:onClick="chooseAnswer"
+                        android:tag="0"
+                        android:text="2"
+                        android:textSize="80sp" />
+
+                    <Button
+                        android:id="@+id/gridBtn2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_button_green"
+                        android:onClick="chooseAnswer"
+                        android:tag="1"
+                        android:text="3"
+                        android:textSize="80sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lower_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/gridBtn3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_button_orange"
+                        android:onClick="chooseAnswer"
+                        android:tag="2"
+                        android:text="1"
+                        android:textSize="80sp" />
+
+                    <Button
+                        android:id="@+id/gridBtn4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_button_blue"
+                        android:onClick="chooseAnswer"
+                        android:tag="3"
+                        android:text="4"
+                        android:textSize="80sp" />
+                </LinearLayout>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gridLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                android:textSize="40sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/playAgainBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="playAgain"
+                android:layout_below="@id/resultText"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"
+                android:text="Play again"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</ScrollView>
